@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.kodeleku'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // IMPLEMENTACIÓN DEL DRIVER DE CONEXIÓN PARA POSTGRESQL
+    implementation ('org.postgresql:postgresql:42.7.2')
+    // IMPLEMENTACIÓN DE DEPENDENCIA PARA JACKSON-DATAFORMAT-XML
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.2'
+    // DEPENDENCIAS POR DEFECTO
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
