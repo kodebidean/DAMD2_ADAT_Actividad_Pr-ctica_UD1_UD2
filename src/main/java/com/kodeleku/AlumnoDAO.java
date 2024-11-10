@@ -7,11 +7,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.List;
 
+import static com.kodeleku.JDBCinit.dotenv;
+
 public class AlumnoDAO {
 
     private static final String url = "jdbc:postgresql://localhost:5433/alumnosdb";
     private static final String user = "postgres";
-    private static final String password = "wnl1gsx2hy";
+    private static final String password = dotenv.get("POSTGRES_PASSWORD");
 
     public int insertAlumnos(List<Alumno> alumnos) {
         String insertSQL = "INSERT INTO alumnos (nombre, apellido, curso, dni) VALUES (?, ?, ?, ?) "

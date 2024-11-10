@@ -3,14 +3,17 @@ package com.kodeleku;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class JDBCinit {
 
+    // Inicializar dotenv de forma estática
+    static final Dotenv dotenv = Dotenv.load();
+
     private static final String url = "jdbc:postgresql://localhost:5433/alumnosdb";
     private static final String user = "postgres";
-    private static final String password = "wnl1gsx2hy";
-
+    private static final String password = dotenv.get("POSTGRES_PASSWORD");
+    // Contraseña: 0077777
 
     public void createTableSQL() {
         String createTableSQL = "CREATE TABLE IF NOT EXISTS alumnos ("
