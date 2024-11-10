@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AlumnoDAO {
 
-    private static final String url = "jdbc:postgresql://localhost:5433/adat";
+    private static final String url = "jdbc:postgresql://localhost:5433/alumnosdb";
     private static final String user = "postgres";
     private static final String password = "wnl1gsx2hy";
 
