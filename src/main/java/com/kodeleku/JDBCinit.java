@@ -13,7 +13,7 @@ public class JDBCinit {
     private static final String url = "jdbc:postgresql://localhost:5433/alumnosdb";
     private static final String user = "postgres";
     private static final String password = dotenv.get("POSTGRES_PASSWORD");
-    // Contraseña: 0077777
+
 
     public void createTableSQL() {
         String createTableSQL = "CREATE TABLE IF NOT EXISTS alumnos ("
